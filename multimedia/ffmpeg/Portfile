@@ -71,7 +71,6 @@ depends_lib         port:lame \
                     port:libvorbis \
                     port:libopus \
                     port:libogg \
-                    port:librsvg \
                     port:libtheora \
                     port:libmodplug \
                     port:libass \
@@ -120,7 +119,6 @@ configure.args      --enable-swscale \
                     --enable-libmp3lame \
                     --enable-libvorbis \
                     --enable-libopus \
-                    --enable-librsvg \
                     --enable-libtheora \
                     --enable-libopenjpeg \
                     --enable-libmodplug \
