@@ -6,7 +6,7 @@ PortGroup           xcodeversion 1.0
 PortGroup           xcode_workaround 1.0
 
 name                x264
-version             20191217
+version             20201025
 categories          multimedia
 license             GPL-2+
 platforms           darwin
@@ -18,24 +18,22 @@ long_description    x264 is a free library for encoding H264/AVC video streams. 
                     Merritt from scratch. It is released under the terms of the \
                     GPL license.
 homepage            https://www.videolan.org/x264.html
-master_sites        https://download.videolan.org/pub/videolan/x264/snapshots/
+master_sites        https://code.videolan.org/videolan/x264/-/archive/1086f4504e0cc79f04018244428821e18d5d31d8
 
-dist_subdir         x264
-distname            ${name}-snapshot-${version}-2245-stable
-
+distname            x264-1086f4504e0cc79f04018244428821e18d5d31d8
 use_bzip2           yes
 
-checksums           rmd160  6a204dfd1d56faf2d9c0ff2b90642507112f291d \
-                    sha256  b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160 \
-                    size    770169
+checksums           rmd160  b9dccbc29ed8459cd3752c4d3f3aa27cb6a7e5f9 \
+                    sha256  e8392a78fe24a60f8268d7a9675e72a65cd0584202a2bdccad6f57c50f57443e \
+                    size    769373
 
 minimum_xcodeversions {9 3.1}
 
 depends_build       port:nasm
 
-# as of 20190313 the PPC assembly uses VSX, which is Power7+ only. We could disable asm, but
-# instead we can use the previous ppc assembly,  which does compile and provides the same functions
-patchfiles-append   patch-x264-older-ppc-code.diff
+# # as of 20190313 the PPC assembly uses VSX, which is Power7+ only. We could disable asm, but
+# # instead we can use the previous ppc assembly,  which does compile and provides the same functions
+# patchfiles-append   patch-x264-older-ppc-code.diff
 
 configure.args      --enable-pic \
                     --enable-shared \
